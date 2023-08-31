@@ -1,0 +1,12 @@
+port: 8080
+
+db:
+  dialect: "postgres"
+  host: "postgres"
+  port: "5432"
+  username: "postgres"
+  password: "postgres"
+  dbname: "dynamic_segmentation_service_db"
+  charset: "utf8"
+  sslmode: "disable"
+  scheme: "postgres"

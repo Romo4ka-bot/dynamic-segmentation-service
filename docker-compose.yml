@@ -1,0 +1,36 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
+    image: app
+    depends_on:
+      - postgres
+    environment:
+      - DB_PASSWORD=postgres
+    ports:
+      - 8080:8080
+    networks:
+      - dynamic-segmentation-service-network
+    volumes:
+      - .:/opt/app/api
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: dynamic_segmentation_service_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - dynamic-segmentation-service-network
+
+volumes:
+  db:
+
+networks:
+  dynamic-segmentation-service-network:
