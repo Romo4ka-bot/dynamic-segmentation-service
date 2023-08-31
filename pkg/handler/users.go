@@ -14,7 +14,6 @@ import (
 // @Accept json
 // @Produce json
 // @Param input body model.User true "user info"
-// 400: BadRequest
 // @Success 200 {object} model.User
 // @Failure 400,404 {string} string "error"
 func (h *Handler) createUser(c *gin.Context) {

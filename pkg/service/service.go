@@ -5,6 +5,8 @@ import (
 	"dynamic-segmentation-service/pkg/repository"
 )
 
+//go:generate mockgen -source=service.go -destination=mocks/mock.go
+
 type User interface {
 	CreateUser(user model.User) (model.User, error)
 	GetUser(id int) (model.User, error)

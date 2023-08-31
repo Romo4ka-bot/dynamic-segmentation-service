@@ -78,5 +78,23 @@ Additionally, in the requests.http file located at the project root, examples of
    * [gorm](https://github.com/go-gorm/gorm) used as an Object-Relational Mapping (ORM)
    * [swag](https://github.com/swaggo/swag) swagger for API documentation
    * [logrus](https://github.com/sirupsen/logrus) for logging errors in JSON format 
+   * [gomock](https://github.com/golang/mock) for creating unit tests and mok generation
    * PostgreSQL database
    * Docker, docker-compose
+
+## Running tests
+
+Some HTTP handlers and other methods in the handlers package were covered with tests, using TestTable for several test scenarios. All test files have the suffix _test in their name.
+To run the tests, you need to go to the /pkg/handler folder and write the command specified below:
+
+```bash
+go test
+```
+
+To get information about the percentage of code coverage by tests:
+
+```bash
+go test -cover
+```
+
+Tests can also be run through the development environment interface, for example GoLand.

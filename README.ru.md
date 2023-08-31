@@ -79,5 +79,23 @@ docker-compose stop
    * [gorm](https://github.com/go-gorm/gorm) в качестве ORM
    * [swag](https://github.com/swaggo/swag) swagger для описания API
    * [logrus](https://github.com/sirupsen/logrus) для логирования ошибок в формате JSON
+   * [gomock](https://github.com/golang/mock) для создания юнит тестов и генерации моков
    * СУБД PostgreSQL
    * Docker, docker-compose
+
+## Запуск тестов
+
+Тестами были покрыты некоторые HTTP-хендлеры и другие методы в пакете handlers, используя testTable для нескольких сценариев тестов. Все файлы с тестами имеют в названии суффикс _test.
+Чтобы запустить тесты, нужно перейти в папку /pkg/handler и прописать команду указанную ниже:
+
+```bash
+go test
+```
+
+Для получения информации о проценте покрытия кода тестами:
+
+```bash
+go test -cover
+```
+
+Также тесты можно запустить через интерфейс среды разработки, например GoLand.

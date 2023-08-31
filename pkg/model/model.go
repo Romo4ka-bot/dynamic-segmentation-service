@@ -41,11 +41,11 @@ type Segment struct {
 
 type UserSegments struct {
 	// List of segment slugs to add
-	AddSlugs []string `json:"addSlugs"`
+	AddSlugs []string `json:"addSlugs" binding:"required"`
 	// List of segment slugs to remove
-	RemoveSlugs []string `json:"removeSlugs"`
+	RemoveSlugs []string `json:"removeSlugs" binding:"required"`
 	// ID of user
-	UserId int `json:"userId"`
+	UserId int `json:"userId" binding:"required"`
 }
 
 func DBMigrate(db *gorm.DB) *gorm.DB {
